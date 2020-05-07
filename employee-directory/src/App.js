@@ -6,52 +6,60 @@ import Header from "./components/Header";
 
 class App extends Component {
   state = {
-    results: [],
+    people: [],
+    filtered: [],
     searchTerm: "",
     order: "123"
   };
 
   componentDidMount() {
-    console.log("mount");
     this.getEmployees();
   }
 
   getEmployees = () => {
     API.search(this.state.order, (empObj) => {
       console.log(empObj);
-      
-      // empObj = res.data.results;
-      this.setState({ results: empObj })
+      this.setState({ people: empObj,
+      filtered: empObj })
     })
   };
 
   handleOrder = () => {
-    if(this.state.order !== "123") {
-    this.setState({ order: "123" },
-    () => {
-      API.sortJSON(this.state.results, "email", this.state.order, (orderedObj) => {
-        this.setState({ results: orderedObj })
-      })
-    });
-  }
-  else {
-    this.setState({ order: "321" },
-    () => {
-      API.sortJSON(this.state.results, "email", this.state.order, (orderedObj) => {
-        this.setState({ results: orderedObj })
-      })
-    });
+    if (this.state.order !== "123") {
+      this.setState({ order: "123" },
+        () => {
+          API.sortJSON(this.state.filtered, "email", this.state.order, (orderedObj) => {
+            this.setState({ filtered: orderedObj })
+          })
+        });
+    }
+    else {
+      this.setState({ order: "321" },
+        () => {
+          API.sortJSON(this.state.filtered, "email", this.state.order, (orderedObj) => {
+            this.setState({ filtered: orderedObj })
+          })
+        });
+    }
   }
 
-  }
-
-  handleSubmit = (event) => {
+  handleInputChange = (event) => {
     event.preventDefault();
-    console.log("handleSubmit");
+    const value = event.target.value;
+
+    // Updating the input's state
     this.setState({
-      results: this.state.results.filter(person =>
-        person.name.first.includes("y"))
-    });
+      searchTerm: value.toLowerCase()
+    },
+      () => {
+
+        console.log(this.state.searchTerm);
+
+        this.setState({
+          filtered: this.state.people.filter(person =>
+            person.name.first.toLowerCase().includes(this.state.searchTerm))
+        });
+      })
   }
 
   render() {
@@ -59,11 +67,12 @@ class App extends Component {
     return (
       <div>
         <Header
-        handleSubmit ={this.handleSubmit} />
+          handleInputChange={this.handleInputChange}
+          value={this.state.searchTerm} />
 
         <button onClick={this.handleOrder}>Order</button>
-
-        {this.state.results.map((employee, id) => (
+       
+        {this.state.filtered.map((employee, id) => (
           <EmployeeCard
             key={id}
             id={id}

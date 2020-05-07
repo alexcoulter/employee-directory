@@ -15,8 +15,8 @@
   height: 60%;
   overflow: hidden;
   text-align: center;
-  background:#6CADDC;
-  /* padding-top: 5px; */
+  background:#325d81;
+  padding-top: 2px;
 }
 .card > .img-container > img {
   width: 70%;
