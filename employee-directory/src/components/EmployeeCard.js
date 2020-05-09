@@ -1,5 +1,5 @@
 import React from "react";
-import "./EmployeeCard.css";
+import "./style.css";
 
 function EmployeeCard(props) {
   return (
@@ -16,10 +16,10 @@ function EmployeeCard(props) {
             <strong>Gender:</strong> {props.gender}
           </li>
           <li>
-            <strong>Email:</strong> {props.email}
+            <strong>Age:</strong> {props.age}
           </li>
           <li>
-            <strong>Id:</strong> {props.id}
+            <strong>Email: </strong><a href={`mailto: ${props.email}`}>{props.email}</a>
           </li>
         </ul>
       </div>
