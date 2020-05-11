@@ -1,68 +1,50 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# employee-directory
+ 
+ ![React](https://img.shields.io/badge/Javascript_Library-React-green) 
 
-## Available Scripts
+## Table of Contents
 
-In the project directory, you can run:
+* [User Story](#user-story)
+* [Installation](#installation)
+* [Usage](#usage)
+* [Screenshots](#screenshots)
+* [Built With](#built-with)
 
-### `npm start`
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## User Story
+As a user, I want to be able to view my entire employee directory at once so that I have quick access to their information.  I would like to be able to order the employees by name, age, or email and would like to be able to filter the employees using a search box.
+* To check out my app on Heroku go here:  https://alexcoulter.github.io/employee-directory/
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+## Installation
 
-### `npm test`
+ * Clone this repository from Github from the command line by typing:  
+   `git clone https://github.com/alexcoulter/employee-directory.git`
+  * Navigate to the 'fitness-time' folder by typing:  
+  `cd employee-directory` 
+  * Install dependencies by typing:  
+   `npm install`
+  * Run this application by typing:   
+  `node server` 
+  * Open this application in your browser by typing the url:
+  `http://localhost:3000/`
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+  ## Usage
+When you open this app your 30 employees are loaded from the *randomuser.me* api.  To put the employees in order by the categories listed, simply press the button of said category in the heading of the list.  If you want to order the employees by *`Last Name`* simply press the button on the top of ther list that says *`Last Name`*.  Press it again and the employees will be in descending alphabetical order.  To filter employees by a search word, just type it in the search box in the top-right corner of the page.  Only employees that have the searched characters in their first or last name will remain.  To switch from *`List View`* to *`Card View`* or back, click the icon next to *`Change View`* in the header. This will allow you to see the employees in seperate cards with their pictures and information. 
+  
+  ## Screenshots
+* List View Screenshot
+<div align="center"><img  alt= "Screenshot of list View" src= "./src/ssList.jpg" width="600px" /></div>
 
-### `npm run build`
+* Card View Screenshot
+<div align="center"><img  alt= "Screenshot of Card View" src= "./src/ssCard.jpg" width="600px" /></div>
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
+* Ipad Screenshot
+<div align="center"><img  alt= "Screenshot on Ipad" src= "./src/ssIpadCard.jpg" width="600px" /></div>
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
+* Iphone Screenshot
+<div align="center"><img  alt= "Screenshot on Iphone" src= "./src/iphoneListss.jpg" width="600px" /></div>
+   
+   
+   ## Built With  
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+* **React** - One of the most powerfull, popular Javascript libraries. Used for creating interactive UI.

@@ -8,14 +8,14 @@ html, body {
   background:#325d81;
 }
 
-.body {
+.main {
   width: 100%;
   height: 100%;
   min-height: 700px;
   position: relative;
   }
 
-.body::before {
+.main::before {
   background-image: url("../bg.jpg");
   background-size: cover;
   content: "";
@@ -114,16 +114,6 @@ a {
 
 
 @media screen and (max-width: 775px) {
-  /* .body {
-    margin:0 auto;
-    width: 100%;
-  }
-  .container {
-    margin: 2px;
-    margin-bottom:5%;
-    padding:0;
-    width: 100%;
-  } */
 
   .btn {
     font-size: 10px !important;

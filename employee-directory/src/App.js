@@ -84,7 +84,7 @@ class App extends Component {
             changeView={this.changeView}
             view={this.state.view} />
 
-          <div className=" body py-5">
+          <div className="main py-5">
             <div className="card-container container justify-content-center">
               <EmployeeList
                 filtered={this.state.filtered}
@@ -102,7 +102,7 @@ class App extends Component {
             handleInputChange={this.handleInputChange}
             value={this.state.searchTerm}
             changeView={this.changeView} />
-          <div className="container-fluid body py-5">
+          <div className="container-fluid main py-5">
             <div className="card-container justify-content-center">
               {this.state.filtered.map((employee, id) => (
                 <EmployeeCard
