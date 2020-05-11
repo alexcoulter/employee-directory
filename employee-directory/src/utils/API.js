@@ -4,7 +4,6 @@ export default {
   search: function (cb) {
     axios.get("https://randomuser.me/api/?results=30")
       .then(function (response) {
-        console.log(response.data.results);
         cb(response.data.results);
       })
       .catch(function (error) {
@@ -33,16 +32,5 @@ export default {
       if (order === '321') { return ((x > y) ? -1 : ((x < y) ? 1 : 0)); }
     }));
   }
-
-
 };
-
-// function sortJSON(data, key, way) {
-//   // eslint-disable-next-line
-//   return data.sort(function(a, b) {
-//       var x = a[key]; var y = b[key];
-//       if (way === '123' ) { return ((x < y) ? -1 : ((x > y) ? 1 : 0)); }
-//       if (way === '321') { return ((x > y) ? -1 : ((x < y) ? 1 : 0)); }
-//   });
-// }
 

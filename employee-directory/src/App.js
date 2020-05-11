@@ -1,9 +1,10 @@
 import './components/style.css';
 import React, { Component } from "react";
-import API from "./components/API";
+import API from "./utils/API";
 import EmployeeCard from "./components/EmployeeCard";
 import EmployeeList from "./components/EmployeeList";
 import Header from "./components/Header";
+import Footer from "./components/Footer";
 import $ from 'jquery'; 
 
 class App extends Component {
@@ -12,7 +13,7 @@ class App extends Component {
     filtered: [],
     searchTerm: "",
     order: "",
-    view: "list"
+    view: "card"
   };
 
   componentDidMount() {
@@ -22,15 +23,16 @@ class App extends Component {
   
   componentDidUpdate() {
     $(window).resize(function() {
-    $("#card-container").css("margin-top",  $("#nav").height());
-    $("#list-container").css("margin-top", $("#nav").height());
-    // console.log($("#nav").height())
+    $("#list-container").css("padding-top", $("#nav").height());
+    $("#list-container").css("padding-top", "+=5%");
+    $("#card-container").css("padding-top", $("#nav").height());
+    $("#card-container").css("padding-top", "+=5%");
+    $(".main").css("padding-bottom", "-=50px");
   }).resize();
   }
 
   getEmployees = () => {
     API.search((empObj) => {
-      console.log(empObj);
       this.setState({
         people: empObj,
         filtered: empObj
@@ -87,7 +89,7 @@ class App extends Component {
   render() {
     if (this.state.view === "list") {
       return (
-        <div>
+        <div id = "wrapper">
           <Header
             handleInputChange={this.handleInputChange}
             value={this.state.searchTerm}
@@ -101,18 +103,20 @@ class App extends Component {
                 handleOrder={this.handleOrder}
               />
             </div>
+            <div className="push"></div>
           </div>
+          <Footer />
         </div>
       );
     }
     else if (this.state.view === "card") {
       return (
-        <div>
+        <div id="wrapper">
           <Header
             handleInputChange={this.handleInputChange}
             value={this.state.searchTerm}
             changeView={this.changeView} />
-          <div className="container-fluid main">
+          <div className="main">
             <div id="card-container" className="card-container justify-content-center">
               {this.state.filtered.map((employee, id) => (
                 <EmployeeCard
@@ -126,9 +130,10 @@ class App extends Component {
                 />
               ))}
             </div>
+            <div className="push"></div>
           </div>
+          <Footer />
         </div>
-
       );
     }
   }
