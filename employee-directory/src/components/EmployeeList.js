@@ -3,7 +3,7 @@ import "./style.css";
 
 function EmployeeList(props) {
   return (
-    <div className="list-container table-responsive-sm">
+    <div className="table-responsive-sm">
       <table className="table table-striped table-light table-bordered table-hover">
         <thead className = "thead-secondary">
           <tr>

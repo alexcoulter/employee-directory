@@ -3,7 +3,7 @@ import React from "react";
 
 function Header(props) {
 return (
-  <nav className="navbar navbar-dark">
+  <nav id="nav" className="navbar navbar-dark">
   <h1 className="navbar-brand">Employee Directory</h1>
   <form className="form-inline">
   <p className = "mt-3 mr-2 text-white">Change View:</p>

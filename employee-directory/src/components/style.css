@@ -6,6 +6,10 @@ html, body {
 
 .navbar {
   background:#325d81;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index:5;
 }
 
 .main {
@@ -63,7 +67,13 @@ a {
 }
 
 .list-container {
-  margin-top: 16px;
+  padding-top:calc(5% + 33px);
+}
+
+.card-container {
+  text-align: center;
+  margin: 0 auto;
+  padding-top:calc(5% + 17px);
 }
 
 .card {
@@ -107,10 +117,6 @@ a {
   padding-top: 10px;
 }
 
-.card-container {
-  text-align: center;
-  margin: 0 auto;
-}
 
 
 @media screen and (max-width: 775px) {
@@ -129,12 +135,9 @@ a {
 @media screen and (max-width: 450px) {
   .card {
     margin: 0;
-    margin-bottom:5%;
+    margin-top:1rem;
+    margin-bottom:.5rem;
     padding:0;
     width: 95%;
-  }
-
-  .list-container {
-    margin-top:0px;
   }
 }

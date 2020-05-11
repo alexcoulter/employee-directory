@@ -4,6 +4,7 @@ import API from "./components/API";
 import EmployeeCard from "./components/EmployeeCard";
 import EmployeeList from "./components/EmployeeList";
 import Header from "./components/Header";
+import $ from 'jquery'; 
 
 class App extends Component {
   state = {
@@ -16,6 +17,15 @@ class App extends Component {
 
   componentDidMount() {
     this.getEmployees();
+  }
+
+  
+  componentDidUpdate() {
+    $(window).resize(function() {
+    $("#card-container").css("margin-top",  $("#nav").height());
+    $("#list-container").css("margin-top", $("#nav").height());
+    // console.log($("#nav").height())
+  }).resize();
   }
 
   getEmployees = () => {
@@ -84,8 +94,8 @@ class App extends Component {
             changeView={this.changeView}
             view={this.state.view} />
 
-          <div className="main py-5">
-            <div className="card-container container justify-content-center">
+          <div className="main">
+            <div id="list-container" className="list-container container justify-content-center">
               <EmployeeList
                 filtered={this.state.filtered}
                 handleOrder={this.handleOrder}
@@ -102,8 +112,8 @@ class App extends Component {
             handleInputChange={this.handleInputChange}
             value={this.state.searchTerm}
             changeView={this.changeView} />
-          <div className="container-fluid main py-5">
-            <div className="card-container justify-content-center">
+          <div className="container-fluid main">
+            <div id="card-container" className="card-container justify-content-center">
               {this.state.filtered.map((employee, id) => (
                 <EmployeeCard
                   key={id}
