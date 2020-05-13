@@ -9,18 +9,27 @@ import $ from 'jquery';
 
 class App extends Component {
   state = {
-    people: [],
+    employees: [],
     filtered: [],
     searchTerm: "",
     order: "",
-    view: "card"
+    view: "list"
   };
 
+  //gets employee info array from Api and set the state of 'employees' and 'filtered' to this array
   componentDidMount() {
     this.getEmployees();
   }
+  getEmployees = () => {
+    API.search((empObj) => {
+      this.setState({
+        employees: empObj,
+        filtered: empObj
+      })
+    })
+  };
 
-  
+  //Changes body padding based on navbar height
   componentDidUpdate() {
     $(window).resize(function() {
     $("#list-container").css("padding-top", $("#nav").height());
@@ -30,15 +39,6 @@ class App extends Component {
     $(".main").css("padding-bottom", "-=50px");
   }).resize();
   }
-
-  getEmployees = () => {
-    API.search((empObj) => {
-      this.setState({
-        people: empObj,
-        filtered: empObj
-      })
-    })
-  };
 
   //Change order of employees by field
   handleOrder = (event) => {
@@ -73,7 +73,7 @@ class App extends Component {
     },
       () => {
         this.setState({
-          filtered: this.state.people.filter(person => 
+          filtered: this.state.employees.filter(person => 
             person.name.first.toLowerCase().includes(this.state.searchTerm) || person.name.last.toLowerCase().includes(this.state.searchTerm) || person.dob.age.toString().includes(this.state.searchTerm) || person.email.toLowerCase().includes(this.state.searchTerm))
         });
       })
@@ -87,6 +87,7 @@ class App extends Component {
   }
 
   render() {
+    //renders page in 'List View'
     if (this.state.view === "list") {
       return (
         <div id = "wrapper">
@@ -109,6 +110,7 @@ class App extends Component {
         </div>
       );
     }
+     //renders page in 'Card View'
     else if (this.state.view === "card") {
       return (
         <div id="wrapper">
