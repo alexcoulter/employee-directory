@@ -1,0 +1,23 @@
+{
+  "files": {
+    "main.css": "/employee-directory/static/css/main.d314971f.chunk.css",
+    "main.js": "/employee-directory/static/js/main.45d771ac.chunk.js",
+    "main.js.map": "/employee-directory/static/js/main.45d771ac.chunk.js.map",
+    "runtime-main.js": "/employee-directory/static/js/runtime-main.a161ee7e.js",
+    "runtime-main.js.map": "/employee-directory/static/js/runtime-main.a161ee7e.js.map",
+    "static/js/2.cf071241.chunk.js": "/employee-directory/static/js/2.cf071241.chunk.js",
+    "static/js/2.cf071241.chunk.js.map": "/employee-directory/static/js/2.cf071241.chunk.js.map",
+    "index.html": "/employee-directory/index.html",
+    "precache-manifest.7f12e3409c359e6422b6dd78bd047e92.js": "/employee-directory/precache-manifest.7f12e3409c359e6422b6dd78bd047e92.js",
+    "service-worker.js": "/employee-directory/service-worker.js",
+    "static/css/main.d314971f.chunk.css.map": "/employee-directory/static/css/main.d314971f.chunk.css.map",
+    "static/js/2.cf071241.chunk.js.LICENSE.txt": "/employee-directory/static/js/2.cf071241.chunk.js.LICENSE.txt",
+    "static/media/style.css": "/employee-directory/static/media/bg.6a445ac4.jpg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.a161ee7e.js",
+    "static/js/2.cf071241.chunk.js",
+    "static/css/main.d314971f.chunk.css",
+    "static/js/main.45d771ac.chunk.js"
+  ]
+}
